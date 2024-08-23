@@ -2,9 +2,12 @@ const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const urlRoutes = require('./routes/urlRoutes');
+const cors = require('cors');
+
 require('dotenv').config();
 
 const app = express();
+app.use(cors());
 connectDB();
 
 app.use(express.json());
